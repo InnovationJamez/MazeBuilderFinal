@@ -1,51 +1,22 @@
-#include "GrowingTree.h"
-#include "MazeLoader.h"
-#include "PrimAlgorithm.h"
-#include "RecersiveBacktrack.h"
+#include <iostream>
+#include <string>
+#include <vector>
 
-void BuildGrowingTree(int* width, int* height, std::string* binFileName, std::string* solutionName);
-void BuildPrim(int* width, int* height, std::string* binFileName, std::string* solutionName);
-void BuildRecersive(int* width, int* height, std::string* binFileName, std::string* solutionName);
 
 int main() {
-	int height = 10, width = 10;
-	std::string buildMethod;
-	std::string binFileName = "maze.maze";
-	std::string SVGFileName = "svg.svg";
-	std::string solutionName = "solution.txt";
 
-	std::cout << "Build Options\ng: growing tree\np: prim algorithm\nr:recersive" << std::endl;
-	std::cout << "buildMethod width height svgName.svg\nENTER HERE: ";
-	std::cin >> buildMethod >> width >> height >> SVGFileName;
+	// the width and height of the maze
+	int w, h;
 
-	if (buildMethod == "g") {
-		BuildGrowingTree(&width, &height, &binFileName, &solutionName);
-		MazeLoader(&binFileName, &SVGFileName, &solutionName);
-	}if (buildMethod == "p") {
-		BuildPrim(&width, &height, &binFileName, &solutionName);
-		MazeLoader(&binFileName, &SVGFileName, &solutionName);
-	}if (buildMethod == "r") {
-		BuildRecersive(&width, &height, &binFileName, &solutionName);
-		MazeLoader(&binFileName, &SVGFileName, &solutionName);
-	}
-}
+	// get input from the user
+	std::cout << "enter the width and height of the maze seporated by a space w h" << std::endl;
+	std::cin >> w >> h;
+	std::cout << "\n";
+	std::cout << w << " " << h << std::endl;
 
-void BuildGrowingTree(int* width, int* height, std::string* binFileName, std::string* solutionName) {
-	GrowingTree treeObj(width, height, binFileName, solutionName);
-	treeObj.addLocation();
-	treeObj.buildLoop();
-	treeObj.binaryMain();
-	treeObj.solverMain();
-}
+	// create the maze array
+	std::vector<int> maze(w * h);
 
-void BuildPrim(int* width, int* height, std::string* binFileName, std::string* solutionName) {
-	PrimAlgorithm primObj(width, height, binFileName, solutionName);
-	primObj.binaryMain();
-	primObj.solverMain();
-}
 
-void BuildRecersive(int* width, int* height, std::string* binFileName, std::string* solutionName) {
-	RecursiveBacktrack recObj(width, height, binFileName, solutionName);
-	recObj.binaryMain();
-	recObj.solverMain();
+	return 0;
 }
