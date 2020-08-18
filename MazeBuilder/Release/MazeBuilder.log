@@ -1,0 +1,8 @@
+﻿  GrowingTree.cpp
+  Main.cpp
+  Prim.cpp
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 321 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  MazeBuilder.vcxproj -> C:\Users\innov\Documents\GitHub\MazeBuilder\Release\MazeBuilder.exe

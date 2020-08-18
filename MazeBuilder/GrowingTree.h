@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include <fstream>
+#include <time.h>
 
 // for storing maze data
 constexpr int UP = 1;
@@ -11,6 +12,7 @@ constexpr int DOWN = 2;
 constexpr int RIGHT = 4;
 constexpr int LEFT = 8;
 constexpr int VISITED = 16;
+constexpr int EXP = 32;
 
 // custom data store x and y values
 struct Pos {
@@ -34,7 +36,7 @@ struct Pos {
 
 class GrowingTree
 {
-private:
+protected:
 	// the vector to store the maze
 	std::vector<int>* maze;
 	// the width of the maze
@@ -54,6 +56,5 @@ public:
 	void carvePath(int dir);
 	// walk through the maze
 	virtual void walkMaze();
-
 };
 

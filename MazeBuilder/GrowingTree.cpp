@@ -13,8 +13,8 @@ GrowingTree::GrowingTree(std::vector<int>* maze_Pointer, int w, int h)
 	// set start position as visited
 	(*maze)[curr.yPos * width + curr.xPos] |= VISITED;
 
-	// begin walking through maze
-	walkMaze();
+	// get seed for random numbers
+	srand((unsigned)time(NULL));
 }
 
 /*
