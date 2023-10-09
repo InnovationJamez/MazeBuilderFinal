@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maze Builder</title>
+
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+
+        .maze-container {
+            position: relative;
+        }
+
+        .maze-base {
+            position: relative;
+        }
+
+        .maze-solution {
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="maze-container">
+        <div class="maze-solution">
+            <canvas id="solCanvas"></canvas>
+        </div>
+        <div class="maze-base">
+            <canvas id="mazeCanvas"></canvas>
+        </div>
+    </div>
+
+    <div class="control">
+        <div class="control-row">
+            <label for="width">Width: </label>
+            <input type="text" name="width">
+        </div>
+        <div class="control-row">
+            <label for="width">Height: </label>
+            <input type="text" name="width">
+        </div>
+        <div class="control-row">
+            <select>
+                <option>Prim</option>
+                <option>Backtrack</option>
+            </select>
+        </div>
+    </div>
+
+    <p id="mazeData"></p>
+
+    <script src="./maze.js"></script>
+    <script src="./draw.js"></script>
+    <script src="./main.js"></script>
+</body>
+
+</html>
